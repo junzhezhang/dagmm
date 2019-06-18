@@ -132,7 +132,6 @@ class DaGMM(nn.Module):
             cov_inverse.append(torch.inverse(cov_k).unsqueeze(0))
             itm = np.linalg.det(cov_k.data.cpu().numpy()* (2*np.pi))
             itm = torch.from_numpy(np.array([itm])).float().cuda()
-            print (type(itm))
             det_cov.append(itm)
 #             det_cov.append((Cholesky.apply(cov_k.cpu() * (2*np.pi)).diag().prod()).unsqueeze(0))
             cov_diag = cov_diag + torch.sum(1 / cov_k.diag())
@@ -140,8 +139,6 @@ class DaGMM(nn.Module):
         # K x D x D
         cov_inverse = torch.cat(cov_inverse, dim=0)
         # K
-        print ("check point: "+str(type(det_cov)))
-        print (det_cov)
         det_cov = torch.cat(det_cov).cuda()
         #det_cov = to_var(torch.from_numpy(np.float32(np.array(det_cov))))
 
