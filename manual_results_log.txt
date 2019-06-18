@@ -1,0 +1,5 @@
+# python3 main.py
+# python3 main.py --mode 'test'
+Accuracy : 0.8529, Precision : 0.8201, Recall : 0.7083, F-score : 0.7601
+# python3 main.py --mode 'test' --pretrained_model '200_194'
+Accuracy : 0.8628, Precision : 0.8289, Recall : 0.7345, F-score : 0.7789
