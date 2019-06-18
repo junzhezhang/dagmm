@@ -164,6 +164,7 @@ class Solver(object):
         total_loss, sample_energy, recon_error, cov_diag = self.dagmm.loss_function(input_data, dec, z, gamma, self.lambda_energy, self.lambda_cov_diag)
 
         self.reset_grad()
+        total_loss = Variable(total_loss, requires_grad = True)
         total_loss.backward()
 
         torch.nn.utils.clip_grad_norm_(self.dagmm.parameters(), 5)
