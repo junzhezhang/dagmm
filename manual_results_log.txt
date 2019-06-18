@@ -3,3 +3,13 @@
 Accuracy : 0.8529, Precision : 0.8201, Recall : 0.7083, F-score : 0.7601
 # python3 main.py --mode 'test' --pretrained_model '200_194'
 Accuracy : 0.8628, Precision : 0.8289, Recall : 0.7345, F-score : 0.7789
+
+# 1 epoch run.py
+Accuracy : 0.9438, Precision : 0.9400, Recall : 0.8857, F-score : 0.9120
+# 50 epoch run.py
+Accuracy : 0.9366, Precision : 0.9188, Recall : 0.8854, F-score : 0.9018
+
+# Jun 18 eve results
+# python3 main.py
+# python3 main.py --mode 'test' --pretrained_model '200_194'
+Accuracy : 0.9523, Precision : 0.9445, Recall : 0.9083, F-score : 0.9260
