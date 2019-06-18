@@ -96,7 +96,7 @@ class hyperparams():
         self.__dict__.update(**config)
 defaults = {
     'lr' : 1e-4,
-    'num_epochs' : 1,
+    'num_epochs' : 50,
     'batch_size' : 1024,
     'gmm_k' : 4,
     'lambda_energy' : 0.1,
