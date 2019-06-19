@@ -13,3 +13,16 @@ Accuracy : 0.9366, Precision : 0.9188, Recall : 0.8854, F-score : 0.9018
 # python3 main.py
 # python3 main.py --mode 'test' --pretrained_model '200_194'
 Accuracy : 0.9523, Precision : 0.9445, Recall : 0.9083, F-score : 0.9260
+
+
+## Jun 19, using NSL_KDD data.
+
+
+
+
+如果需要设置seed 
+每个文件import后都加一下
+torch.manual_seed(6)
+torch.cuda.manual_seed(6) 
+random.seed(6)
+np.random.seed(6)
