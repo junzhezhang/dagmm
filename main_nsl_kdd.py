@@ -4,7 +4,7 @@ from solver import Solver
 # from data_loader import get_loader
 from torch.backends import cudnn
 from utils import *
-
+from torch.utils.data import DataLoader
 
 class NSLKDDLoader(object):
     def __init__(self, train_path, test_path, mode="train"):
@@ -20,10 +20,10 @@ class NSLKDDLoader(object):
         test_labels = test_data["nsl_kdd_test"][:,-1]
         test_features = test_data["nsl_kdd_test"][:,:-1]
 
-        self.train = train_data
+        self.train = train_features
         self.train_labels = train_labels
 
-        self.test = test_data
+        self.test = test_features
         self.test_labels = test_labels
 
     def __len__(self):
@@ -55,6 +55,7 @@ def get_nsl_kdd_loader(train_path, test_path, batch_size, mode='train'):
     data_loader = DataLoader(dataset=dataset,
                              batch_size=batch_size,
                              shuffle=shuffle)
+    return data_loader
 
 def str2bool(v):
     return v.lower() in ('true')
@@ -98,16 +99,16 @@ if __name__ == '__main__':
     parser.add_argument('--use_tensorboard', type=str2bool, default=True)
 
     # Path
-    parser.add_argument('--train_path', type=str, default='nls_kdd_train.npz')
-    parser.add_argument('--test_path', type=str, default='nls_kdd_test.npz')
+    parser.add_argument('--train_path', type=str, default='nsl_kdd_train.npz')
+    parser.add_argument('--test_path', type=str, default='nsl_kdd_test.npz')
     parser.add_argument('--log_path', type=str, default='./dagmm/logs')
     parser.add_argument('--model_save_path', type=str, default='./dagmm/models')
 
     # Step size
     parser.add_argument('--log_step', type=int, default=10)
-    parser.add_argument('--sample_step', type=int, default=194)
-    parser.add_argument('--model_save_step', type=int, default=194)
-
+    parser.add_argument('--sample_step', type=int, default=124)
+    parser.add_argument('--model_save_step', type=int, default=124)
+    parser.add_argument('--input_dimension',type=int,default=122)
     config = parser.parse_args()
  
     args = vars(config)

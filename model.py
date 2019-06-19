@@ -22,11 +22,11 @@ class Cholesky(torch.autograd.Function):
     
 class DaGMM(nn.Module):
     """Residual Block."""
-    def __init__(self, n_gmm = 2, latent_dim=3):
+    def __init__(self, n_gmm = 2, latent_dim=3, input_size=118):
         super(DaGMM, self).__init__()
 
         layers = []
-        layers += [nn.Linear(118,60)]
+        layers += [nn.Linear(input_size,60)]
         layers += [nn.Tanh()]        
         layers += [nn.Linear(60,30)]
         layers += [nn.Tanh()]        
@@ -44,7 +44,7 @@ class DaGMM(nn.Module):
         layers += [nn.Tanh()]        
         layers += [nn.Linear(30,60)]
         layers += [nn.Tanh()]        
-        layers += [nn.Linear(60,118)]
+        layers += [nn.Linear(60,input_size)]
 
         self.decoder = nn.Sequential(*layers)
 

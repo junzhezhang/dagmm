@@ -55,7 +55,7 @@ if __name__ == '__main__':
     parser.add_argument('--log_step', type=int, default=10)
     parser.add_argument('--sample_step', type=int, default=194)
     parser.add_argument('--model_save_step', type=int, default=194)
-
+    parser.add_argument('--input_dimension',type=int,default=118)
     config = parser.parse_args()
  
     args = vars(config)

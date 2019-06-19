@@ -32,7 +32,7 @@ class Solver(object):
 
     def build_model(self):
         # Define model
-        self.dagmm = DaGMM(self.gmm_k)
+        self.dagmm = DaGMM(self.gmm_k,input_size=self.input_dimension)
 
         # Optimizers
         self.optimizer = torch.optim.Adam(self.dagmm.parameters(), lr=self.lr)
