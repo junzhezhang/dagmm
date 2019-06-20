@@ -24,8 +24,13 @@ Accuracy : 0.4205, Precision : 0.1872, Recall : 0.1033, F-score : 0.1331
 //  python3 main_nsl_kdd.py --mode 'test' --pretrained_model '300_124' --test_path 'nsl_kdd_train.npz'
 
 ## Jun 20, using NSL_KDD data, train wo attack
+# python3 main_nsl_kdd.py --num_epochs 300 --sample_step 66 --model_save_step 66
 
-
+# python3 main_nsl_kdd.py --mode 'test' --pretrained_model '300_66'
+# NSL train w/o attack， (100 - 20) - normal 没有反
+Accuracy : 0.3358, Precision : 0.1789, Recall : 0.1511, F-score : 0.1638
+# NSL train w/o attack, (100 -43) - normal 没有反
+Accuracy : 0.3007, Precision : 0.2426, Recall : 0.2938, F-score : 0.2658
 
 如果需要设置seed 
 每个文件import后都加一下

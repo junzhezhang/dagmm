@@ -20,11 +20,11 @@ class NSLKDDLoader(object):
         test_labels = test_data["nsl_kdd_test"][:,-1]
         test_features = test_data["nsl_kdd_test"][:,:-1]
 
-        train_normal_features = train_features[train_labels==1]
-        train_normal_labels = train_labels[train_labels==1]
+        train_attack_features = train_features[train_labels==0]
+        train_attack_labels = train_labels[train_labels==0]
 
-        self.train = train_normal_features
-        self.train_labels = train_normal_labels
+        self.train = train_attack_features
+        self.train_labels = train_attack_labels
 
         self.test = test_features
         self.test_labels = test_labels
@@ -112,6 +112,7 @@ if __name__ == '__main__':
     parser.add_argument('--sample_step', type=int, default=124)
     parser.add_argument('--model_save_step', type=int, default=124)
     parser.add_argument('--input_dimension',type=int,default=122)
+    parser.add_argument('--anomaly_percentage',type=int,default=20)
     config = parser.parse_args()
  
     args = vars(config)

@@ -32,6 +32,7 @@ def load_data_v2(file_path, cols=None, scale = (0,1)):
     # Scale all numerical data to [0-1]
     data.iloc[:, NUM_IND] = minmax_scale(data.iloc[:, NUM_IND],feature_range=scale)
     labels = data['labels']
+    # TODO(junzhe) same as dagmm git
     data.loc[data["labels"] != "normal", 'labels'] = 0
     data.loc[data["labels"] == "normal", 'labels'] = 1
     # Binary labeling

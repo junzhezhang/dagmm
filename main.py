@@ -56,6 +56,7 @@ if __name__ == '__main__':
     parser.add_argument('--sample_step', type=int, default=194)
     parser.add_argument('--model_save_step', type=int, default=194)
     parser.add_argument('--input_dimension',type=int,default=118)
+    parser.add_argument('--anomaly_percentage',type=int,default=20)
     config = parser.parse_args()
  
     args = vars(config)
