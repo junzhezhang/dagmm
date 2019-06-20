@@ -13,15 +13,18 @@ Accuracy : 0.9366, Precision : 0.9188, Recall : 0.8854, F-score : 0.9018
 # python3 main.py
 # python3 main.py --mode 'test' --pretrained_model '200_194'
 Accuracy : 0.9523, Precision : 0.9445, Recall : 0.9083, F-score : 0.9260
-
+# saved file
 
 ## Jun 19, using NSL_KDD data.
-# python3 main_nsl_kdd.py --num_epochs 10
-python3 main.py --num_epochs 1
-python3 main_nsl_kdd.py --num_epochs 300
+#python3 main_nsl_kdd.py --num_epochs 300
 python3 main_nsl_kdd.py --mode 'test' --pretrained_model '300_124'
 Accuracy : 0.4205, Precision : 0.1872, Recall : 0.1033, F-score : 0.1331
+# saved file
+
 //  python3 main_nsl_kdd.py --mode 'test' --pretrained_model '300_124' --test_path 'nsl_kdd_train.npz'
+
+## Jun 20, using NSL_KDD data, train wo attack
+
 
 
 如果需要设置seed 

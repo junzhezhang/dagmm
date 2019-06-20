@@ -20,8 +20,11 @@ class NSLKDDLoader(object):
         test_labels = test_data["nsl_kdd_test"][:,-1]
         test_features = test_data["nsl_kdd_test"][:,:-1]
 
-        self.train = train_features
-        self.train_labels = train_labels
+        train_normal_features = train_features[labels==1]
+        train_normal_labels = train_labels[labels==1]
+
+        self.train = train_normal_features
+        self.train_labels = train_normal_labels
 
         self.test = test_features
         self.test_labels = test_labels
