@@ -242,7 +242,7 @@ class Solver(object):
         combined_energy = np.concatenate([train_energy, test_energy], axis=0)
         combined_labels = np.concatenate([train_labels, test_labels], axis=0)
 
-        thresh = np.percentile(combined_energy, 100 - 20)
+        thresh = np.percentile(combined_energy, 100 - 43)
         print("Threshold :", thresh)
 
         pred = (test_energy > thresh).astype(int)
