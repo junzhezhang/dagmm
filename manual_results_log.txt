@@ -16,8 +16,12 @@ Accuracy : 0.9523, Precision : 0.9445, Recall : 0.9083, F-score : 0.9260
 
 
 ## Jun 19, using NSL_KDD data.
-
-
+# python3 main_nsl_kdd.py --num_epochs 10
+python3 main.py --num_epochs 1
+python3 main_nsl_kdd.py --num_epochs 300
+python3 main_nsl_kdd.py --mode 'test' --pretrained_model '300_124'
+Accuracy : 0.4205, Precision : 0.1872, Recall : 0.1033, F-score : 0.1331
+//  python3 main_nsl_kdd.py --mode 'test' --pretrained_model '300_124' --test_path 'nsl_kdd_train.npz'
 
 
 如果需要设置seed 
@@ -26,3 +30,5 @@ torch.manual_seed(6)
 torch.cuda.manual_seed(6) 
 random.seed(6)
 np.random.seed(6)
+
+
